@@ -1,0 +1,30 @@
+Installation
+============
+
+Required packages
+    python-dev, libxml, libxslt, libffi, mysql-client
+
+Ubuntu
+    $ sudo apt-get install build-essential python-dev libxml2-dev libxslt1-dev libmysqlclient-dev
+
+
+::
+    $ sudo apt-get install python-pip
+    $ sudo pip install setuptools --upgrade
+    $ sudo pip install pip --upgrade
+    $ sudo pip install virtualenv
+    $ git clone https://github.com/sita9841/djcode.git
+    $ virtualenv .
+    $ ./bin/pip install -r requirements.txt
+    $ ./bin/pip install uwsgi [production]
+    $ cd fightvaw_newsscrapper
+    $ cp scrapy.development.cfg scrapy.cfg
+    $ cp crawleradmin/settings.development.py crawleradmin/settings.py
+    $ vim crawleradmin/settings.py
+        [ Change necessary settings such as database access ]
+    
+    $ ./bin/python src/manage.py syncdb
+    $ ./bin/python src/manage.py initiate
+    $ ./bin/python src/manage.py collectstatic
+    $ ./bin/python src/manage.py runserver
+    
